@@ -40,3 +40,19 @@ ___
 
 ### Instalacion de Docker E Imagen de postgress
 
+----
+### 12-02
+---
+
+### Repaso
+Se hace repaso de sql.
+
+- Diferencia entre varchar&char:\
+
+ ***VARCHAR*** is the more commonly used and standardized way to define variable-length strings in SQL, while ***VAR*** or CHARACTER VARYING is less common but functionally equivalent in most databases.
+```sql
+ \l = Permite listar 
+ \c (name db)= Permite ingresar a la db
+ \d = Permite listar las tablas de DB
+ \d (name-table)
+```
