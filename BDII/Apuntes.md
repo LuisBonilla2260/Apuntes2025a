@@ -56,3 +56,39 @@ Se hace repaso de sql.
  \d = Permite listar las tablas de DB
  \d (name-table)
 ```
+13-02
+```sql
+-- Crear la base de datos
+CREATE DATABASE tienda;
+
+-- Conectar a la base de datos
+\c tienda;
+
+-- Crear la tabla Ciudad
+CREATE TABLE Ciudad (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
+-- Crear la tabla Cliente
+CREATE TABLE Cliente (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    id_ciudad INT NOT NULL,
+    FOREIGN KEY (id_ciudad) REFERENCES Ciudad(id) ON DELETE CASCADE
+);
+
+-- Crear la tabla Compra
+CREATE TABLE Compra (
+    id SERIAL PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    fecha DATE NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id) ON DELETE CASCADE
+);
+
+
+
+
+```
